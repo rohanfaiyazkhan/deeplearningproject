@@ -82,7 +82,7 @@ AUC<-function(predictions, labels){
 }
 
 ## Load face descriptors
-load("vgg.RData")
+load("./vgg.RData")
 
 for (i in ground_truth){
   print(i)
