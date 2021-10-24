@@ -1,3 +1,5 @@
 *.RData
 /**/*.csv
 .ipynb_checkpoints/*
+
+env/*
