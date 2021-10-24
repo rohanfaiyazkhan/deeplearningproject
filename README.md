@@ -10,7 +10,7 @@ To install requirements, run:
 pip install -r requirements.txt
 ```
 
-Datasets can be downloaded from the link specified in the paper. [https://osf.io/c58d3/](https ://osf.io/c58d3/)
+Datasets can be downloaded from the link specified in the paper. [https://osf.io/c58d3/](https://osf.io/c58d3/)
 
 TODO: Write script for processing RData files for consumption by pandas.
 
