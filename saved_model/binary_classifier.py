@@ -21,10 +21,11 @@ class BinaryClassifier(nn.Module):
         return x
     
 def load_pretrained_classifier(weights_path):
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model = BinaryClassifier()
     model.load_state_dict(torch.load(weights_path))
     model.eval()
-    return model
+    return model.to(device)
     
 
 if __name__ == '__main__':
