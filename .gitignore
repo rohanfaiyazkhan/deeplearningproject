@@ -11,3 +11,6 @@ __pycache__
 /**/__pycache__/*
 
 *.pkl
+
+lime_results
+new_data
