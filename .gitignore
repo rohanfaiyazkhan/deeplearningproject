@@ -14,3 +14,6 @@ __pycache__
 
 lime_results
 new_data
+data/images/*
+data/new_crops/**/*
+
