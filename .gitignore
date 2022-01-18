@@ -1,5 +1,6 @@
 *.RData
-/**/*.csv
+data/**/*.csv
+vgg_chunks/**/*.csv
 /**/*.npy
 .ipynb_checkpoints/*
 /**/.ipynb_checkpoints/*
