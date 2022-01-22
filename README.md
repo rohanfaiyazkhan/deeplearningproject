@@ -24,15 +24,21 @@ python ./data/convert_rdata_to_numpy.py
 ```
 This outputs a `vgg.npy` containing the features and `faces.csv` containing the labels. This data can be loaded at any time using the functions provided in `data/load_data.py`.
 
+Unfortunately the dataset for "Before and After" dataset cannot be made public to preserve anonymity and privacy of persons pictured. Unfortunately this limits the reproducibility of the project. We have however made public the exact scripts used to scrape the images (available [here](https://github.com/rohanfaiyazkhan/bing-search-scraping)) and the search terms used to generate images detailed in the paper. We also made available a tool for labelling images more efficiently [here](https://github.com/rohanfaiyazkhan/tkinter-image-labeller-gui).
+
 ## Code
 
 Please note that the experiments were run in Jupyter Lab version 3.0.9.
 
 To train the models run the notebooks `train_lasso_regression.ipynb` and `train_neural_net.ipynb` respectively. `train_lasso_regression_cross_validation.ipynb` is also available as a means to reproduce Table 2 of the original paper.
 
-Before running LIME please ensure that the pre-trained weights for ResNet-50 model using VGGFace2 dataset are available. While the original weights provided by the authors of VGGFace2 are no longer available, a backup of it can be found [here](https://queensuca-my.sharepoint.com/:u:/g/personal/21rfk_queensu_ca/EQ7o1aRxfIFNprDBi0H01sQBp7rmAKfyu-Jwjk3K3AHJWA?e=gAPoQs). Download it and copy the weights as `saved_model/resnet50_ft_weight.pkl`.
+Before building pipeline for inference, please ensure that the pre-trained weights for ResNet-50 model using VGGFace2 dataset are available. While the original weights provided by the authors of VGGFace2 are no longer available, a backup of it can be found [here](https://queensuca-my.sharepoint.com/:u:/g/personal/21rfk_queensu_ca/EQ7o1aRxfIFNprDBi0H01sQBp7rmAKfyu-Jwjk3K3AHJWA?e=gAPoQs). Download it and copy the weights as `saved_model/resnet50_ft_weight.pkl`.
 
 Saved models are also available as `saved_model/binary_classifier.py` and `saved_model/lasso.joblib`.
+
+Experiments for the retest analysis (E2 from paper) is available in `retest_analysis.ipynb`.
+
+Before After model training and inference using images of those consenting to their pictures being used (E3 in paper) are available in `before_and_after_model`.
 
 ## Reference
 
