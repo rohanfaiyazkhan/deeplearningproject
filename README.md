@@ -1,5 +1,4 @@
 # Codebase associated with paper: "Before And After Pseudoscience: An Empirical Challenge to Social Classification using Facial Recognition"
-Authors: Rohan Faiyaz Khan, Sam Baranek, Georgia Reed, Catherine Stinson
 
 ## Abstract
 
