@@ -1,0 +1,1 @@
+This directory contains results of cleaning data manually. `marked_for_deletion` denotes images which are not to be used, and `marked_for_manual` denotes images that must be cropped manually. The most important file is `labels.npy` which includes the before after labels of each image pair.
