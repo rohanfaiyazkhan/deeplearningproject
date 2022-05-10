@@ -15,7 +15,7 @@ pip install -r requirements.txt
 
 Datasets can be downloaded from the link specified in the paper. [https://osf.io/c58d3/](https://osf.io/c58d3/)
 
-Download the `RData` files to `/data` and run:
+Download the `RData` files to `/data/original` and run:
 
 ```python
 python ./data/convert_rdata_to_numpy.py
@@ -24,13 +24,13 @@ This outputs a `vgg.npy` containing the features and `faces.csv` containing the 
 
 ## Code
 
-A copy of the original R-script provided by the author is available in `original_kosinski_code.R`.
+Please note that the experiments were run in Jupyter Lab environment.
 
-Please note that the experiments were run in Jupyter Lab environment. We cannot guarantee that any other environment can run this without errors.
+To train the models run the notebooks `notebooks/train_lasso_regression.ipynb` and `notebooks/train_neural_net.ipynb` to train the logistic regression model and neural network respectively. `train_lasso_regression_cross_validation.ipynb` is also available as a means to reproduce Table 2 of the original paper.
 
-To train the models run the notebooks `train_lasso_regression.ipynb` and `train_neural_net.ipynb` respectively. `train_lasso_regression_cross_validation.ipynb` is also available as a means to reproduce Table 2 of the original paper.
+Running test-retest will unfortunately require the before after dataset which cannot be made public for privacy concerns. Steps to reproduce the dataset however are provided in the paper. If you have the dataset regenerated and can proceed with test-retest analysis, please ensure that the pre-trained weights for ResNet-50 model using VGGFace2 dataset are available. While the original weights provided by the authors of VGGFace2 are no longer available, a backup of it can be found [here](https://queensuca-my.sharepoint.com/:u:/g/personal/21rfk_queensu_ca/EQ7o1aRxfIFNprDBi0H01sQBp7rmAKfyu-Jwjk3K3AHJWA?e=gAPoQs). Download it and copy the weights as `saved_model/resnet50_ft_weight.pkl`.
 
-Before running LIME please ensure that the pre-trained weights for ResNet-50 model using VGGFace2 dataset are available. While the original weights provided by the authors of VGGFace2 are no longer available, a backup of it can be found [here](https://queensuca-my.sharepoint.com/:u:/g/personal/21rfk_queensu_ca/EQ7o1aRxfIFNprDBi0H01sQBp7rmAKfyu-Jwjk3K3AHJWA?e=gAPoQs). Download it and copy the weights as `saved_model/resnet50_ft_weight.pkl`. Afterwards LIME can be run on any sample image using `lime_lass.ipynb` and `lime_neural_net.ipynb`.
+
 
 ## Reference
 
