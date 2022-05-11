@@ -1,3 +1,7 @@
+import sys
+from os import path
+sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
+
 from saved_model.binary_classifier import load_pretrained_classifier
 from saved_model.prepare_resnet50 import prepare_resnet_model
 from PIL import Image

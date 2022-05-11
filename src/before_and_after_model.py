@@ -1,6 +1,4 @@
 
-
-from tqdm import tqdm
 import math
 from pathlib import Path
 from fastai import *
@@ -11,7 +9,7 @@ from PIL import Image
 import math
 import numpy as np
 import torch
-from src.utils import get_torch_device
+from utils import get_torch_device
 
 
 def predict(fn, model, scale=1):
@@ -34,7 +32,7 @@ if __name__ == "__main__":
 
     device = get_torch_device()
 
-    data_path = Path('./data/before_after_/')
+    data_path = Path('./data/before_after_images/processed')
 
     fns = get_image_files(data_path)
 
@@ -52,20 +50,14 @@ if __name__ == "__main__":
 
     learn = cnn_learner(dls, resnet18, metrics=accuracy)
 
-    learn.lr_find()
-
-    lr = 3e-3
+    lr = 3e-3  # found using learn.lr_find()
     learn = cnn_learner(dls, resnet18, metrics=accuracy, lr=lr)
     learn.fine_tune(2, freeze_epochs=6)
-
-    dls.train
 
     train_loss, train_accuracy = learn.validate(dl=dls.train)
     train_accuracy
 
     interp = ClassificationInterpretation.from_learner(learn)
-
-    interp.plot_confusion_matrix()
 
     learn.model_dir = "saved_model"
     dest_path = "./saved_model/before_after.pkl"

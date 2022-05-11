@@ -1,4 +1,8 @@
 
+import sys
+from os import path
+sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
+
 from data.load_image import load_image_for_feature_extraction
 from saved_model.prepare_resnet50 import prepare_resnet_model
 from pathlib import Path

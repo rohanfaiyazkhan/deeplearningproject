@@ -1,7 +1,11 @@
 
+import sys
+from os import path
+sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
+
 from matplotlib import pyplot as plt
 import torch
-from utils import label_func, get_labels
+from utils import label_func
 import pandas as pd
 import numpy as np
 from tqdm import tqdm

@@ -1,15 +1,18 @@
-
-import pandas as pd
-import numpy as np
-from data.load_data import load_faces, load_features
-from joblib import dump
-from src.utils import get_labels
+import sys
+from os import path
+sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 from sklearn.linear_model import SGDClassifier
+from joblib import dump
+import numpy as np
+import pandas as pd
+from data.load_data import load_faces, load_features
+from utils import get_labels
+
 
 np.random.seed(67)
-number_of_minibatches = 4
+number_of_minibatches = 3
 
-sgd_classifier_params = {"alpha": 0.0001, "penalty": 'l2', "loss": "log"}
+sgd_classifier_params = {"alpha": 0.001, "penalty": 'l2', "loss": "log"}
 
 
 def get_binary_accuracy(preds, actual):
@@ -63,4 +66,4 @@ if __name__ == "__main__":
     print(
         f"Model trained with training accuracy: {training_accuracy} and validation accuracy: {valid_accuracy}")
 
-    save_model('saved_model/log.joblib')
+    save_model(model, 'saved_model/log.joblib')
