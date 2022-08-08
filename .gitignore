@@ -15,6 +15,6 @@ __pycache__
 
 lime_results
 new_data
-data/before_after_images/*
-data/new_crops/**/*
+data/before_after_images/processed
+data/before_after_images/raw
 sample_images
