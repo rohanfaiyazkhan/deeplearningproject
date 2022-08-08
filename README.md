@@ -24,7 +24,7 @@ python ./data/convert_rdata_to_numpy.py
 
 This outputs a `vgg.npy` containing the features and `faces.csv` containing the labels. This data can be loaded at any time using the functions provided in `data/load_data.py`.
 
-Unfortunately the dataset for "Before and After" dataset cannot be made public to preserve anonymity and privacy of persons pictured. Unfortunately this limits the reproducibility of the project. We have however made public the exact scripts used to scrape the images (available [here](https://anonymous.4open.science/r/bing-search-image-scraping-EFB1)) and the search terms used to generate images detailed in the paper. We also made available a tool for labelling images more efficiently [here](https://anonymous.4open.science/r/tkinter-image-labeller-gui-01F3/). The data should be saved in the following structure (the directories are already committed in the repository):
+Unfortunately the raw dataset for "Before and After" dataset cannot be made public to preserve anonymity and privacy of persons pictured. Unfortunately this limits the reproducibility of the project. We have however made public the exact scripts used to scrape the images (available [here](https://anonymous.4open.science/r/bing-search-image-scraping-EFB1)) and the search terms used to generate images detailed in the paper. We also made available a tool for labelling images more efficiently [here](https://anonymous.4open.science/r/tkinter-image-labeller-gui-01F3/). The data should be saved in the following structure (the directories are already committed in the repository):
 
 ```
 data
@@ -33,6 +33,8 @@ data
         ├── after
         └── before
 ```
+
+However to allow for some level reproducibility we have made available the list of extracted features from the raw images using both ResNet-50 trained on VGGFace2 (i.e. for test-retest analysis in E2) and ResNet-18 trained on ImageNet (i.e. for Before-After model in E3). The features are available in `data/before_after_images/features`. Please see `data/before_after_images/features/README.md` for more details.
 
 ## Models
 
