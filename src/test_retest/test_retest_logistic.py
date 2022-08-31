@@ -1,27 +1,25 @@
 
+from src.utils import get_torch_device
+import joblib
+from PIL import Image
+from fastai.data.all import get_image_files
+import torch
+import pandas as pd
+import numpy as np
+from tqdm import tqdm
+from pathlib import Path
+from saved_model.prepare_resnet50 import prepare_resnet_model
+from data.load_image import load_image_for_feature_extraction
 import sys
 from os import path
 sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 
-from data.load_image import load_image_for_feature_extraction
-from saved_model.prepare_resnet50 import prepare_resnet_model
-from pathlib import Path
-from tqdm import tqdm
-from pathlib import Path
-import numpy as np
-import pandas as pd
-import torch
-from fastai.data.all import get_image_files
-from PIL import Image
-import numpy as np
-import joblib
-from src.utils import get_torch_device
 
 image_file_extensions = ('.png', '.jpg', '.jpeg', '.tiff', '.bmp', '.gif')
-image_dir = Path("./data/before_after_images/processed")
+image_dir = Path("../../data/before_after_images/processed")
 before_dir = image_dir / 'before'
 after_dir = image_dir / 'after'
-log_model_path = "./saved_model/lasso_pol_dat_us.joblib"
+log_model_path = "../../saved_model/lasso_pol_dat_us.joblib"
 
 
 def is_image_path_valid(path: Path):

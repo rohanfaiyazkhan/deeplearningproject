@@ -84,8 +84,5 @@ Scripts for reproducing experiments with extracted features are available under 
 
 ```bash
 # E2
-python3 ./src/reproduction_extracted_features/e2.py
-
-# E3
-python3 ./src/reproduction_extracted_features/e3.py
+python3 ./src/reproduction_extracted_features/test_retest.py
 ```

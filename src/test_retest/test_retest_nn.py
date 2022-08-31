@@ -1,26 +1,22 @@
+from utils import get_torch_device
+from src.test_retest.test_retest_utils import get_cat, get_contingency_table, load_image_paths, preprocess
+import torch
+import pandas as pd
+import numpy as np
+from tqdm import tqdm
+from pathlib import Path
+from PIL import Image
+from saved_model.prepare_resnet50 import prepare_resnet_model
+from saved_model.binary_classifier import load_pretrained_classifier
 import sys
 from os import path
 sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 
-from saved_model.binary_classifier import load_pretrained_classifier
-from saved_model.prepare_resnet50 import prepare_resnet_model
-from PIL import Image
-from pathlib import Path
-from tqdm import tqdm
-from pathlib import Path
-import numpy as np
-import pandas as pd
-import torch
-from src.test_retest.test_retest_utils import get_cat, get_contingency_table, load_image_paths, preprocess
 
-
-from utils import get_torch_device
-
-
-image_dir = Path("./data/before_after_images/processed")
+image_dir = Path("../../data/before_after_images/processed")
 before_dir = image_dir / 'before'
 after_dir = image_dir / 'after'
-results_path = Path("./results/batch_nn_preds.csv")
+results_path = Path("../../results/batch_nn_preds.csv")
 
 
 def full_nn_pipeline(x, resnet_model=None, binary_classifier=None):
